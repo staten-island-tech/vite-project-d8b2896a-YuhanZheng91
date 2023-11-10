@@ -1,0 +1,14 @@
+:root {
+  --h1: 3.4rem;
+  --h2: 2rem;
+  --h3: 1.51rem;
+
+}
+
+body{
+  background-color: #ccc5b9;
+}
+
+h1{
+  font-size: var(--h1);
+}
