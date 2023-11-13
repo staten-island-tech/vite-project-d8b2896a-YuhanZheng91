@@ -2,7 +2,6 @@
   --h1: 3.4rem;
   --h2: 2rem;
   --h3: 1.51rem;
-
 }
 
 body{
@@ -11,4 +10,16 @@ body{
 
 h1{
   font-size: var(--h1);
+}
+
+.ab-good{
+  font-size: var(--h3);
+}
+
+.ab-evil{
+  font-size: var(--h3);
+}
+
+.neither{
+  font-size: var(--h3);
 }
