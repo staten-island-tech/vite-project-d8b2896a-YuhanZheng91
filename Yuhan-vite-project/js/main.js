@@ -9,3 +9,7 @@ const DOMSelectors = {
     form: document.querySelector("#formm"),
     
 }
+
+DOMSelectors.form.addEventListener('submit', function(){
+    
+})
