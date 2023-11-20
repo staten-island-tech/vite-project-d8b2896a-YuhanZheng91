@@ -1,11 +1,11 @@
 :root {
   --h1: 3.4rem;
   --h2: 2rem;
-  --h3: 1.51rem;
+  --h3: .91rem;
   --weird-green: #ccc5b9;
 
   --ae-dull-red: #b47a7a;
-  --ae-dark-purple: #533353;
+  --ae-dark-purple: #963f5c;
   --ae-light-red: #e0aeae;
 
   --ag-dull-blue: #70a7a7;
@@ -18,12 +18,20 @@
 }
 
 body{
-  background-color: white;
+  background-color: rgb(255, 245, 249);
   color: var(--eg-dark-pink);
 }
 
 h1{
+  padding: 1%;
+  margin: 1% 2%;
+  text-align: center;
   font-size: var(--h1);
+}
+
+form{
+  align-items: center;
+  text-align: center;
 }
 
 .ab-good-b{
@@ -45,4 +53,8 @@ h1{
   background-color: var(--eg-pink);
   border-color: var(--eg-dark-pink);
   color:white;
+}
+
+.alll-b{
+  font-size: var(--h3);
 }

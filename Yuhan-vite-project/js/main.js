@@ -10,10 +10,66 @@ const DOMSelectors = {
     form: document.querySelector("#formm"),
 };
 
-DOMSelectors.form.addEventListener('submit', function(){
-    
+DOMSelectors.form.addEventListener('click', function(){
+    console.log('A button clicked');
+
+    cards();
 })
 
-function absoGood(){
+function cards(){
+    const allC = `<div class= "container"> 
+    <div id="card">
+      <h2> something </h2>
+    </div>
+
+    <div id="card">
+      <h2>wedfewfre</h2>
+    </div>
+
+    <div id="card">
+      <h2>wedewd</h2>
+    </div>
+
+    <div id="card">
+      <h2>erferf</h2>
+    </div>
     
+    <div id="card">
+      <h2>wedwe</h2>
+    </div>
+    
+    <div id="card">
+      <h2></h2>
+    </div>
+    
+    <div id="card">
+      <h2></h2>
+    </div>
+    
+    <div id="card">
+      <h2></h2>
+    </div>
+    
+    <div id="card">
+      <h2></h2>
+    </div>
+    
+    <div id="card">
+      <h2></h2>
+    </div>
+    
+    <div id="card">
+      <h2></h2>
+    </div>
+    
+    <div id="card">
+      <h2></h2>
+    </div>
+    
+    <div id="card">
+      <h2></h2>
+    </div>
+    
+  </div>`
+    DOMSelectors.form.insertAdjacentHTML('afterend', allC);
 }
