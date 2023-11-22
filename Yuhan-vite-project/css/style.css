@@ -1,8 +1,10 @@
 :root {
   --h1: 3.4rem;
-  --h2: 2rem;
+  --h2: 0.8rem;
   --h3: .91rem;
-  --weird-green: #ccc5b9;
+
+  --a-lightlight-pink: #F7C6D6;
+  --a-lightlightlight-pink: #fbe2ea;
 
   --ae-dull-red: #b47a7a;
   --ae-dark-purple: #963f5c;
@@ -57,17 +59,42 @@ form{
 
 .alll-b{
   font-size: var(--h3);
+  background-color: var(--a-lightlightlight-pink);
+  border-color: var(--a-lightlight-pink);
 }
 
 #card{
-  background-color: #e1e4e6;
+  background-color: #ffffff; 
   margin: 4%;
   padding: 2%;
-  width: max-content;
+  width: 10%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  font-size: var(--h2);
 }
 
 .container{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.stand-any{
+  background-color: var(--a-lightlight-pink);
+}
+
+.stand-none{
+  background-color: var(--eg-light-pink);
+}
+
+.goodconst{
+  background-color: var(--ag-light-blue);
+}
+
+.badconst{
+  background-color: var(--ae-light-red);
 }

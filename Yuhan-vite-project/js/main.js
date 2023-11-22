@@ -8,13 +8,6 @@ const neutral = stars.filter((el)=> el.stand !== "Absolute Evil" || "Absolute Go
 
 document.querySelector(".alll-b").addEventListener('click', function(){
   console.log('"all" button clicked');
-/*   if(document.body.classList.contains("goodconst" || "badconst" || "stand-none")){
-    document.body.classList.add("stand-all");
-    document.body.classList.remove("goodconst" || "badconst" || "stand-none");
-  } else {
-    
-  } */
-
   if(document.body.classList.contains("goodconst")){
     document.body.classList.remove("goodconst");
     document.body.classList.add("stand-any");
@@ -44,27 +37,36 @@ document.querySelector(".ab-good-b").addEventListener('click', function(){
 
 document.querySelector(".ab-evil-b").addEventListener('click', function(){
   console.log(`'absolute evil' button was clicked`);
-  if(document.body.classList.contains("stand-all" || "goodconst" || "stand-none")){
+  if(document.body.classList.contains("stand-any")){
+    document.body.classList.remove("stand-any");
     document.body.classList.add("badconst");
-    document.body.classList.remove("stand-all" || "goodconst" || "stand-none");
+  } else if(document.body.classList.contains("goodconst")){
+    document.body.classList.remove("goodconst");
+    document.body.classList.add("badconst");
+  } else {
+    document.body.classList.remove("stand-none");
+    document.body.classList.add("badconst");
   }
 })
 
 document.querySelector(".neither-b").addEventListener('click', function(){
   console.log(`'others' button was clicked`);
-  if(document.body.classList.contains("stand-all" || "goodconst" || "badconst")){
+  if(document.body.classList.contains("stand-any")){
+    document.body.classList.remove("stand-any");
     document.body.classList.add("stand-none");
-    document.body.classList.remove("stand-all" || "goodconst" || "badconst");
+  } else if(document.body.classList.contains("badconst")){
+    document.body.classList.remove("badconst");
+    document.body.classList.add("stand-none");
+  } else {
+    document.body.classList.remove("goodconst");
+    document.body.classList.add("stand-none");
   }
 })
 
-function smth(){
-}
-
 function cards(){
-    const allC = `<div class= "container"> 
+    const allC = ` <div class=container>
     <div id="card">
-      <h2> erfr</h2>
+      <h2> ${allConstell.name} </h2>
     </div>
 
     <div id="card">
@@ -114,10 +116,7 @@ function cards(){
     <div id="card">
       <h2></h2>
     </div>
-    
-  </div>`
+    </div>
+    `
     document.querySelector("body").insertAdjacentHTML('afterend', allC);
-}
-
-function displayFilterg(){
 }
