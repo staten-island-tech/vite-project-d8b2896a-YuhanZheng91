@@ -1,13 +1,14 @@
 import '../css/style.css'; // ../ means to exit this folder (and, in this context, to enter css folder into style.css file)
 import { stars } from './menu.js';
 
-const allConstell = stars.map((el)=> el.name !== "Dokja");
+const allConstell = stars.filter((el)=> el.name !== "Dokja");
 const aEvil = stars.filter((el)=> el.stand === "Absolute Evil");
 const aGood = stars.filter((el)=> el.stand === "Absolute Good");
-const neutral = stars.filter((el)=> el.stand !== "Absolute Evil" || "Absolute Good");
+const neutral = stars.filter((el)=> el.stand === "None" || el.stand === "Neither" || el.stand === "Lone");
 
 document.querySelector(".alll-b").addEventListener('click', function(){
   console.log('"all" button clicked');
+  console.log(allConstell);
   if(document.body.classList.contains("goodconst")){
     document.body.classList.remove("goodconst");
     document.body.classList.add("stand-any");
@@ -18,11 +19,24 @@ document.querySelector(".alll-b").addEventListener('click', function(){
     document.body.classList.remove("stand-none");
     document.body.classList.add("stand-any");
   }
-  cards();
+
+  /* const littleCards = document.querySelectorAll("#card");
+  if(document.littleCards.classList.contains("goodconst")){
+    document.littleCards.classList.remove("goodconst");
+    document.littleCards.classList.add("stand-any");
+  } else if(document.littleCards.classList.contains("badconst")){
+    document.littleCards.classList.remove("badconst");
+    document.littleCards.classList.add("stand-any");
+  } else {
+    document.littleCards.classList.remove("stand-none");
+    document.littleCards.classList.add("stand-any");
+  }  */
+
 })
 
 document.querySelector(".ab-good-b").addEventListener('click', function(){
   console.log(`"Absolute Good" button was clicked`);
+  console.log(aGood);
   if(document.body.classList.contains("stand-any")){
     document.body.classList.remove("stand-any");
     document.body.classList.add("goodconst");
@@ -37,6 +51,7 @@ document.querySelector(".ab-good-b").addEventListener('click', function(){
 
 document.querySelector(".ab-evil-b").addEventListener('click', function(){
   console.log(`'absolute evil' button was clicked`);
+  console.log(aEvil);
   if(document.body.classList.contains("stand-any")){
     document.body.classList.remove("stand-any");
     document.body.classList.add("badconst");
@@ -51,6 +66,7 @@ document.querySelector(".ab-evil-b").addEventListener('click', function(){
 
 document.querySelector(".neither-b").addEventListener('click', function(){
   console.log(`'others' button was clicked`);
+  console.log(neutral);
   if(document.body.classList.contains("stand-any")){
     document.body.classList.remove("stand-any");
     document.body.classList.add("stand-none");
@@ -64,7 +80,7 @@ document.querySelector(".neither-b").addEventListener('click', function(){
 })
 
 function cards(){
-    const allC = ` <div class=container>
+    const allCHTML = ` <div class=container>
     <div id="card">
       <h2> ${allConstell.name} </h2>
     </div>
@@ -118,5 +134,5 @@ function cards(){
     </div>
     </div>
     `
-    document.querySelector("body").insertAdjacentHTML('afterend', allC);
+    document.querySelector("body").insertAdjacentHTML('afterend', allCHTML);
 }

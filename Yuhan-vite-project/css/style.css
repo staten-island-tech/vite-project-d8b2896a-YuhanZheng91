@@ -1,6 +1,6 @@
 :root {
   --h1: 3.4rem;
-  --h2: 0.8rem;
+  --h2: 0.72rem;
   --h3: .91rem;
 
   --a-lightlight-pink: #F7C6D6;
@@ -63,14 +63,14 @@ form{
   border-color: var(--a-lightlight-pink);
 }
 
-#card{
+.card{
   background-color: #ffffff; 
   margin: 4%;
   padding: 2%;
-  width: 10%;
+  width: 20%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   text-align: center;
   align-items: center;
   font-size: var(--h2);
