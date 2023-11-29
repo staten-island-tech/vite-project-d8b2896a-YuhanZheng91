@@ -7,7 +7,7 @@ const aGood = stars.filter((el)=> el.stand === "Absolute Good");
 const neutral = stars.filter((el)=> el.stand === "None" || el.stand === "Neither" || el.stand === "Lone");
 
 document.querySelector(".alll-b").addEventListener('click', function(){
-  console.log('"all" button clicked');
+  console.log('"alll" button clicked');
   console.log(allConstell);
   if(document.body.classList.contains("goodconst")){
     document.body.classList.remove("goodconst");
@@ -20,18 +20,21 @@ document.querySelector(".alll-b").addEventListener('click', function(){
     document.body.classList.add("stand-any");
   }
 
-  /* const littleCards = document.querySelectorAll("#card");
-  if(document.littleCards.classList.contains("goodconst")){
-    document.littleCards.classList.remove("goodconst");
-    document.littleCards.classList.add("stand-any");
-  } else if(document.littleCards.classList.contains("badconst")){
-    document.littleCards.classList.remove("badconst");
-    document.littleCards.classList.add("stand-any");
+  allCards();
+  
+  const littleCards = document.querySelectorAll(".card");
+  littleCards.forEach((card)=>{
+  if(card.classList.contains("amazinggood")){
+    card.classList.remove("amazinggood");
+    card.classList.add("card");
+  } else if (card.classList.contains('amazingbad')){
+    card.classList.remove("amazingbad");
+    card.classList.add("card");
   } else {
-    document.littleCards.classList.remove("stand-none");
-    document.littleCards.classList.add("stand-any");
-  }  */
-
+    card.classList.remove("amazing");
+    card.classList.add('card');
+  }
+  })
 })
 
 document.querySelector(".ab-good-b").addEventListener('click', function(){
@@ -47,6 +50,22 @@ document.querySelector(".ab-good-b").addEventListener('click', function(){
     document.body.classList.remove("stand-none");
     document.body.classList.add("goodconst");
   }
+
+  goodCards();
+
+  const littleCards = document.querySelectorAll(".card");
+  littleCards.forEach((card)=>{
+  if(card.classList.contains("card")){
+    card.classList.remove("card");
+    card.classList.add("amazinggood");
+  } else if (card.classList.contains('amazingbad')){
+    card.classList.remove("amazingbad");
+    card.classList.add("amazinggood");
+  } else {
+    card.classList.remove("amazing");
+    card.classList.add('amazinggood');
+  }
+  })
 })
 
 document.querySelector(".ab-evil-b").addEventListener('click', function(){
@@ -62,6 +81,22 @@ document.querySelector(".ab-evil-b").addEventListener('click', function(){
     document.body.classList.remove("stand-none");
     document.body.classList.add("badconst");
   }
+
+  evilCards();
+
+  const littleCards = document.querySelectorAll(".card");
+  littleCards.forEach((card)=>{
+  if(card.classList.contains("card")){
+    card.classList.remove("card");
+    card.classList.add("amazingbad");
+  } else if (card.classList.contains('amazinggood')){
+    card.classList.remove("amazinggood");
+    card.classList.add("amazingbad");
+  } else {
+    card.classList.remove("amazing");
+    card.classList.add('amazingbad');
+  }
+  })
 })
 
 document.querySelector(".neither-b").addEventListener('click', function(){
@@ -77,62 +112,78 @@ document.querySelector(".neither-b").addEventListener('click', function(){
     document.body.classList.remove("goodconst");
     document.body.classList.add("stand-none");
   }
+
+  okCards();
+
+  const littleCards = document.querySelectorAll(".card");
+  littleCards.forEach((card)=>{
+    if(card.classList.contains("card")){
+      card.classList.remove("card");
+      card.classList.add("amazing");
+    } else if (card.classList.contains('amazingbad')){
+      card.classList.remove("amazingbad");
+      card.classList.add("amazing");
+    } else {
+      card.classList.remove("amazinggood");
+      card.classList.add('amazing');
+    }
+  })
 })
 
-function cards(){
-    const allCHTML = ` <div class=container>
-    <div id="card">
-      <h2> ${allConstell.name} </h2>
-    </div>
+//below are functions to sort and "filter" cards
+function allCards(){
+  const container = document.querySelector(".container");
+  container.innerHTML = '';
 
-    <div id="card">
-      <h2>wedfewfre</h2>
-    </div>
+  stars.forEach((star) => {
+    container.innerHTML += `
+      <div class="card">
+        <h2> ${star.modifier} </h2>
+        <h4> ${star.stand} </h4>
+        <h5> ${star.name} </h5>
+      </div>`
+  });
+}
 
-    <div id="card">
-      <h2>wedewd</h2>
-    </div>
+function goodCards(){
+  const container = document.querySelector(".container");
+  container.innerHTML = '';
 
-    <div id="card">
-      <h2>erferf</h2>
-    </div>
+  aGood.forEach((aGood)=> {
+    container.innerHTML +=`
+    <div class="card">
+    <h2> ${aGood.modifier} </h2>
+    <h4> ${aGood.stand} </h4>
+    <h5> ${aGood.name} </h5>
+    </div>`
     
-    <div id="card">
-      <h2>wedwe</h2>
-    </div>
-    
-    <div id="card">
-      <h2></h2>
-    </div>
-    
-    <div id="card">
-      <h2></h2>
-    </div>
-    
-    <div id="card">
-      <h2></h2>
-    </div>
-    
-    <div id="card">
-      <h2></h2>
-    </div>
-    
-    <div id="card">
-      <h2></h2>
-    </div>
-    
-    <div id="card">
-      <h2></h2>
-    </div>
-    
-    <div id="card">
-      <h2></h2>
-    </div>
-    
-    <div id="card">
-      <h2></h2>
-    </div>
-    </div>
-    `
-    document.querySelector("body").insertAdjacentHTML('afterend', allCHTML);
+  })
+}
+
+function evilCards(){
+  const container = document.querySelector(".container");
+  container.innerHTML = '';
+
+  aEvil.forEach((aEvil)=>{
+    container.innerHTML += `
+    <div class="card">
+    <h2> ${aEvil.modifier} </h2>
+    <h4> ${aEvil.stand} </h4>
+    <h5> ${aEvil.name} </h5>
+  </div>`
+  })
+}
+
+function okCards(){
+  const container = document.querySelector(".container");
+  container.innerHTML = '';
+
+  neutral.forEach((neutral)=>{
+    container.innerHTML +=`
+    <div class="card">
+    <h2> ${neutral.modifier} </h2>
+    <h4> ${neutral.stand} </h4>
+    <h5> ${neutral.name} </h5>
+  </div>`
+  })
 }
