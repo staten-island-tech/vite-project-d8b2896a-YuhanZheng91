@@ -174,3 +174,8 @@ form{
 .badconst{
   background-color: var(--ae-dull-red);
 }
+
+
+img{
+  width: 90%;
+}
