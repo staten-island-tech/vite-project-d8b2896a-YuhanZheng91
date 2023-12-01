@@ -140,7 +140,7 @@ function allCards(){
       <div class="card">
         <h2> ${star.modifier} </h2>
         <h4> ${star.stand} </h4>
-        <img src="${star.imageURL}">
+        <img src="${star.imageURL}" alt="${star.imageDesc}">
         <h5> ${star.name} </h5>
       </div>`
   });
@@ -155,7 +155,7 @@ function goodCards(){
     <div class="card">
     <h2> ${aGood.modifier} </h2>
     <h4> ${aGood.stand} </h4>
-    <img src="${aGood.imageURL}">
+    <img src="${aGood.imageURL}" alt="${aGood.imageDesc}">
     <h5> ${aGood.name} </h5>
     </div>`
     
@@ -171,7 +171,7 @@ function evilCards(){
     <div class="card">
     <h2> ${aEvil.modifier} </h2>
     <h4> ${aEvil.stand} </h4>
-    <img src="${aEvil.imageURL}">
+    <img src="${aEvil.imageURL}" alt="${aEvil.imageDesc}">
     <h5> ${aEvil.name} </h5>
   </div>`
   })
@@ -186,7 +186,7 @@ function okCards(){
     <div class="card">
     <h2> ${neutral.modifier} </h2>
     <h4> ${neutral.stand} </h4>
-    <img src="${neutral.imageURL}">
+    <img src="${neutral.imageURL}" alt="${neutral.imageDesc}">
     <h5> ${neutral.name} </h5>
   </div>`
   })
